@@ -1,0 +1,48 @@
+{
+        "name": "Aniko-Anime-Bot",
+        "description": "An Bot TO fetch Anime Shows, Download etc",
+        "logo": "https://i.pinimg.com/originals/e2/45/27/e24527408cab572eb4a5adc8aec3afb5.gif", 
+        "keywords": [
+          "telegram",
+          "Aniko",
+          "anime",
+          "download",
+          "bot"
+        ],
+          "repository": "https://github.com/rohith-sreedharan/Aniko-Anime-Bot",
+          "website": "https://www.rohithaditya.me",
+          "success_url": "https://botsuniverse.live",
+            "env": {
+                "API_HASH":{
+                    "description": "API_HASH",
+                    "value": "Your Api Hash From my.telegram.org"
+                },
+                "API_ID":{
+                    "description": "Your Api Id From my.telegram.org",
+                    "value": "Your Api Id From my.telegram.org"
+                },
+                "BOT_TOKEN":{
+                    "description": "Your Bot Token",
+                    "value": "Your Bot Token From @Botfather"
+                },
+                "OWNER_ID":{
+                    "description": "Your Telegram User Id",
+                    "value": "Enables Acess For Some Features.."
+                },
+                "LOG_CHAT_ID":{
+                    "description": "Your Private Group Id FOr Logs",
+                    "value": "-1001482059289"
+                },
+                "UPDATES_CHANNEL":{
+                    "description": "Channel Username Without @ or t.me/",
+                    "value": "bots_universe"
+                },
+                "STRT_IMG": {
+                    "description": "Start Image When User Put /start",
+                    "value": "https://c.tenor.com/uCVosr0dhnQAAAAC/anime-hello.gif",
+                    "required": false
+                }
+            }
+        }
+
+            

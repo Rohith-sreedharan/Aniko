@@ -12,7 +12,7 @@ Presenting <b>Aniko</b> <br>
 
 <details><summary>Deploy On Heroku</summary>
 
-    <details><summary>I Don't Want My Account To Get Banned..</summary>
+<details><summary>I Don't Want My Account To Get Banned..</summary>
 
 1. Fork This Repo <i>This Is Mandotory</i> <br>
 2. Go To <a href="https://www.heroku.com/">Heroku.com</a><br>
@@ -38,7 +38,7 @@ And Copy All of The Varibles Given Below And Add in there<br>
 </ol>
 </details>
 
-    <details><summary>I am Lazy Give Me direct URL...</summary>
+ <details><summary>I am Lazy Give Me direct URL...</summary>
 
 <b>You Need To Do This</b>
 <ol>
@@ -56,9 +56,9 @@ And Copy All of The Varibles Given Below And Add in there<br>
 </details>
 
 
-  <details><summary>Deploy On Local Host</summary>
+<details><summary>Deploy On Local Host</summary>
 
-      <details><summary>Deploy On Windows</summary>
+<details><summary>Deploy On Windows</summary>
   
 > ON Windows You Need <a href="https://python.org/downloads">PYTHON 3.6 + </a>
 
@@ -72,7 +72,8 @@ And Copy All of The Varibles Given Below And Add in there<br>
 
 
   <details><summary>Deploy On Linux</summary>
-      > Needed Atleast Python 3.6
+      
+> Needed Atleast Python 3.6
 
 <ol>
   <li>Git clone..</li>
@@ -82,3 +83,23 @@ And Copy All of The Varibles Given Below And Add in there<br>
 </ol>
 </details>
 </details>
+
+# Things Used
+- GO GO ANIME
+- PYROGRAM
+- MY BRAIN
+
+## Meta Tags
+
+
+<a href="https://github.com/Rohith-sreedharan/Aniko/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Rohith-sreedharan/Aniko?style=for-the-badge"></a>    <a href="https://github.com/Rohith-sreedharan/Aniko/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Rohith-sreedharan/Aniko?style=for-the-badge"></a>   <a href="https://github.com/Rohith-sreedharan/Aniko/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Rohith-sreedharan/Aniko?style=for-the-badge"></a>
+
+<a href="https://github.com/Rohith-sreedharan/Aniko"><img alt="GitHub license" src="https://img.shields.io/github/license/Rohith-sreedharan/Aniko?style=for-the-badge"></a>        <img alt="GitHub release (latest by SemVer)" src="https://img.shields.io/github/downloads/rohith-sreedharan/Aniko/latest/total?style=for-the-badge">
+
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FRohith-sreedharan%2FAniko%2F"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Frohithaditya"></a>
+
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/rohith-sreedharan/Aniko?style=social">
+
+<img alt="GitHub User's stars" src="https://img.shields.io/github/stars/Rohith-sreedharan?style=social">
+<a href="https://telegram.me/Bots_universe"><img src="https://img.shields.io/badge/Support-Join%20%40Bots__universe-blue"/></a>
+

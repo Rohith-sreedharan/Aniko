@@ -23,11 +23,12 @@ def create_markup(_list: list = [[]]):
 
     return InlineKeyboardMarkup(result)
 
+CHNL_URL = f't.me/{BaseConfig.CHNL_NAME}'
 
 r_home_btn = ["🏠 Home", "home"]
 r_help_btn = ["🙂 Help", "help"]
 r_devs_btn = ["💻 Devs", "devs"]
-r_ourc_btn = ["💝 Our Channel", None, BaseConfig.CHNL_URL]
+r_ourc_btn = ["💝 Our Channel", None, CHNL_URL]
 r_parvat = ["@Parvat_R", None, "t.me/Parvat_R"]
 r_rohith = ["@Rohithaditya", None, "t.me/Rohithaditya"]
 r_search_btn = ["🔍 Search", "search"]

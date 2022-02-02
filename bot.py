@@ -4,9 +4,9 @@ from config import *
 
 Rohith = pyrogram.Client(
     ":memory:",
-    api_id=BaseConfig.api_id,
-    api_hash=BaseConfig.api_hash,
-    bot_token=BaseConfig.bot_token,
+    api_id=BaseConfig.API_ID,
+    api_hash=BaseConfig.API_HASH,
+    bot_token=BaseConfig.BOT_TOKEN,
     plugins=dict(
         root="plugins"
     )

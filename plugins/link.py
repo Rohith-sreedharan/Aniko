@@ -41,8 +41,7 @@ else:
 
 @Client.on_message(filters.command('dl') & filters.private)
 async def dl(client: Client, message: Message):
-    update_channel = BaseConfig.CHNL_NAME
-    if update_channel:
+    if update_channel := BaseConfig.CHNL_NAME:
         try:
             user = await client.get_chat_member(chat_id=f'@{BaseConfig.CHNL_NAME}', user_id=message.chat.id)
             if user.status == "kicked":

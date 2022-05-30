@@ -59,10 +59,7 @@ async def search(client: Client, message: Message):
         query = message.text.replace("/search", "").strip().split()
 
         def listToString(s):
-            str1 = ""
-            for ele in s:
-                str1 += ele
-            return str1
+            return "".join(s)
         query1 = listToString(query)
         if len(query1) == 0:
             await message.reply_text("Please enter the anime name")

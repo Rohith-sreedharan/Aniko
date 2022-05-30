@@ -59,9 +59,7 @@ class Aniko:
             plot_summary = sum.join(pl)
             type_of_show = lis[0].a['title']
             ai = lis[2].find_all('a')  # .find_all('title')
-            genres = []
-            for link in ai:
-                genres.append(link.get('title'))
+            genres = [link.get('title') for link in ai]
             year1 = lis[3].get_text()
             year2 = year1.split(" ")
             year = year2[1]
@@ -74,7 +72,7 @@ class Aniko:
             last_ep_range = a_tag_sliced[-1]
             y = last_ep_range.split("-")
             ep_num = y[-1]
-            res_detail_search = MediaInfoObject(
+            return MediaInfoObject(
                 title=f"{tit_url}",
                 year=int(year),
                 other_names=f"{oth_names}",
@@ -83,9 +81,9 @@ class Aniko:
                 genres=genres,
                 episodes=int(ep_num),
                 image_url=f"{imgg}",
-                summary=f"{plot_summary}"
+                summary=f"{plot_summary}",
             )
-            return res_detail_search
+
         except AttributeError:
             raise InvalidAnimeIdError("Invalid animeid given")
         except requests.exceptions.ConnectionError:
@@ -121,24 +119,22 @@ class Aniko:
                 q_name_raw = links.text.strip()
                 q_name_raw_list = q_name_raw.split('x')
                 quality_name = q_name_raw_list[1]  # 360, 720, 1080p links .just append to keyb lists with name and href
-                if quality_name == "360":
+                if quality_name == "1080":
+                    links_final.link_1080p = download_links
+                elif quality_name == "360":
                     links_final.link_360p = download_links
                 elif quality_name == "480":
                     links_final.link_480p = download_links
                 elif quality_name == "720":
                     links_final.link_720p = download_links
-                elif quality_name == "1080":
-                    links_final.link_1080p = download_links
             anime_multi_link_initial = soup.find('div', {'class': 'anime_muti_link'}).findAll('li')
             anime_multi_link_initial.remove(anime_multi_link_initial[0])
             chumma_list = []
             for l in anime_multi_link_initial:
                 get_a = l.find('a')
                 video_links = get_a['data-video']
-                valid = video_links[0:4]
-                if valid == "http":
-                    pass
-                else:
+                valid = video_links[:4]
+                if valid != "http":
                     video_links = f"https:{video_links}"
                 chumma_list.append(video_links)
             anime_multi_link_initial.remove(anime_multi_link_initial[0])
@@ -163,7 +159,7 @@ class Aniko:
             s = BeautifulSoup(plain, "lxml")
             t = s.findAll('script')
             hdp_js = t[2].string
-            hdp_link_initial = re.search("(?P<url>https?://[^\s]+)", hdp_js).group("url")
+            hdp_link_initial = re.search("(?P<url>https?://[^\s]+)", hdp_js)["url"]
             hdp_link_initial_list = hdp_link_initial.split("'")
             hdp_link_final = hdp_link_initial_list[0]  # final hdp links
             links_final.link_hdp = hdp_link_final
@@ -207,7 +203,7 @@ class Aniko:
                 str_spl.remove(str_spl[0])
                 str_original = ""
                 quality_name = str_original.join(str_spl)
-                episode_res_link.update({f"{quality_name}":f"{downlink}"})
+                episode_res_link[f"{quality_name}"] = f"{downlink}"
                 if "(HDP-mp4)" in quality_name:
                     links_final.link_hdp = downlink
                 elif "(SDP-mp4)" in quality_name:
@@ -262,21 +258,20 @@ class Aniko:
         try:
             if int(count) >= 20:
                 raise CountError("count parameter cannot exceed 20")
-            else:
-                url = f"{self.host}"
-                session = HTMLSession()
-                response = session.get(url)
-                response_html = response.text
-                soup = BeautifulSoup(response_html, 'html.parser')
-                anime = soup.find("nav", {"class": "menu_series cron"}).find("ul")
-                air = []
-                for link in anime.find_all('a'):
-                    airing_link = link.get('href')
-                    name = link.get('title')  # name of the anime
-                    link = airing_link.split('/')
-                    lnk_final = link[2]  # animeid of anime
-                    air.append(ResultObject(title=f"{name}", animeid=f"{lnk_final}"))
-                return air[0:int(count)]
+            url = f"{self.host}"
+            session = HTMLSession()
+            response = session.get(url)
+            response_html = response.text
+            soup = BeautifulSoup(response_html, 'html.parser')
+            anime = soup.find("nav", {"class": "menu_series cron"}).find("ul")
+            air = []
+            for link in anime.find_all('a'):
+                airing_link = link.get('href')
+                name = link.get('title')  # name of the anime
+                link = airing_link.split('/')
+                lnk_final = link[2]  # animeid of anime
+                air.append(ResultObject(title=f"{name}", animeid=f"{lnk_final}"))
+            return air[:int(count)]
         except IndexError or AttributeError or TypeError:
             raise AiringIndexError("No content found on the given page number")
         except requests.exceptions.ConnectionError:

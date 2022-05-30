@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import BaseConfig
 
 def title(l: list = ["text", "data", "url", "login_url", "switch_inline_query, switch_inline_query_current_chat"]):
-    text = l[0] if len(l) >= 1 else "No Text"
+    text = l[0] if l else "No Text"
     data = l[1] if len(l) >= 2 else "nope"
     url = l[2] if len(l) >= 3 else None
     login_url = l[3] if len(l) >= 4 else None

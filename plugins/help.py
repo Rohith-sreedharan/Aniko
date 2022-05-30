@@ -12,8 +12,7 @@ from config import BaseConfig
 
 @Client.on_message(filters.command("help")&filters.private)
 async def help_message(client: Client, message: Message):
-    update_channel = BaseConfig.UPDATES_CHANNEL
-    if update_channel:
+    if update_channel := BaseConfig.UPDATES_CHANNEL:
         try:
             user = await client.get_chat_member(update_channel, client.chat.id)
             if user.status == "kicked":

@@ -62,7 +62,7 @@ Else Try /get [Anime-show-start name]
 Always Remeber You need to use `-` 
 This As Seprator Not `space`.'''
         await message.edit_text(
-            text, "markdown",
+            text, "md",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🏠 Home", "home"),
                  InlineKeyboardButton("💻 Devs", "devs")],

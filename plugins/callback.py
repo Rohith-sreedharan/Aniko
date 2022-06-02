@@ -43,7 +43,7 @@ So If You Have No Choice TO Watch?
 Then Try Me...
 Hope You Will Like My Recommendations...'''
         await message.edit_text(
-            text, "markdown",
+            text,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🏠 Home", "home"),
                  InlineKeyboardButton("💻 Devs", "devs")],
@@ -62,7 +62,7 @@ Else Try /get [Anime-show-start name]
 Always Remeber You need to use `-` 
 This As Seprator Not `space`.'''
         await message.edit_text(
-            text, "md",
+            text,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🏠 Home", "home"),
                  InlineKeyboardButton("💻 Devs", "devs")],
@@ -78,7 +78,7 @@ This As Seprator Not `space`.'''
 So That You can Use In Search
 Remember You Need To Use `-` As Seprator Not `space`sed Mr.{message.from_user.first_name}.'''
         await message.edit_text(
-            text, "markdown",
+            text,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🏠 Home", "home"),
                  InlineKeyboardButton("💻 Devs", "devs")],
@@ -97,7 +97,7 @@ Mr.{message.from_user.first_name}.
 **Example Command** : `/dl One-punch 25`
 **Here** : /dl is Cmd and One-punch is Anime Name and 25 is Episode Number.'''
         await message.edit_text(
-            text, "markdown",
+            text,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🏠 Home", "home"),
                  InlineKeyboardButton("💻 Devs", "devs")],
